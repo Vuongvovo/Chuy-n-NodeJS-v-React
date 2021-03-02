@@ -1,0 +1,24 @@
+@import "./features/scss/Variable.scss"; 
+.heading{
+    padding: 2rem 0rem;
+    &__title{
+        h3{
+            text-align: center;
+            letter-spacing: .1rem;
+            text-transform: uppercase;
+        }
+    }
+    &__hr{
+        width: 13%;
+        height: 2px;
+        background-color: $colorHr;
+        margin: 0 auto;
+    }
+}
+@media (max-width:576px){
+    .heading{
+        &__hr{
+            width: 30%;
+        }
+    }
+}
