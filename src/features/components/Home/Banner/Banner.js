@@ -1,13 +1,9 @@
 import React from 'react'
-import bn1 from "../../../images/notebook-1971495.jpg"
-import "../../../scss/Banner.scss"
+import "../../../scss/Home/Banner.scss"
 export default function Banner() {
 
     return (
         <div className="banner">
-            {/* <div className="banner__img">
-                <img src={bn1} alt="" />
-            </div> */}
             <div className="banner__search">
                 <div className="banner__search--box">
                     <div className="banner__search--box--title">
@@ -17,10 +13,10 @@ export default function Banner() {
                     </div>
                     <div className="banner__search--box--content">
                         <input type="text"
-                            class="form-control" name="" id="" aria-describedby="helpId" placeholder="Việc làm mong muốn ..." />
+                            className="form-control" name="" id="" aria-describedby="helpId" placeholder="Việc làm mong muốn ..." />
                         <input type="text"
-                            class="form-control" name="" id="" aria-describedby="helpId" placeholder="Địa điểm" />
-                        <button type="button" class="btn btn-primary">Search</button>
+                            className="form-control" name="" id="" aria-describedby="helpId" placeholder="Địa điểm" />
+                        <button type="button" className="btn btn-primary">Search</button>
                     </div>
                     <div className="banner__search--suggestions">
 

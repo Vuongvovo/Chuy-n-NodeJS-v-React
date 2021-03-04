@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "../../../scss/ListCategories.scss"
+import "../../../scss/Home/ListCategories.scss"
 export default function ListCategories() {
     return (
         <div className="categori">

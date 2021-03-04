@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../../scss/CvHome.scss"
+import "../../../scss/Home/CvHome.scss"
 export default function CvHome() {
     return (
         <div className="CvHome">

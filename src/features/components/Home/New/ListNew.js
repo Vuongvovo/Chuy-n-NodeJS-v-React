@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import anh from "../../../images/phong-lam-viec-day-du-anh-sang.jpg"
 import anh1 from "../../../images/coffee-1276781.jpg"
-import "../../../scss/ListNew.scss"
+import "../../../scss/Home/ListNew.scss"
 export default function ListNew() {
     return (
         <div id="news">

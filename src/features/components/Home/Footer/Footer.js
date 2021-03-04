@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "../../../scss/Footer.scss"
+import "../../../scss/Home/Footer.scss"
 export default function Footer() {
     return (
         <div className="footer">
             <div className="container-footer">
-                <div class="row justify-content-center">
+                <div className="row justify-content-center">
                     <div className="col-lg-3">
                         <div className="footer__box">
                             <div className="footer__title">

@@ -1,4 +1,4 @@
-.ListJob{
+@mixin jobBox {
     .job__box{
         border-radius: 5px;
         border: 1px solid silver;
@@ -18,14 +18,17 @@
             }
         }
         .job__content{
+            width: 100%;
             .job__title{
+                width: 90%;
                 a{
                     color: #2c3038;
                     text-decoration: none;
                     .jobTitle{
-                        width: 350px;
-                        white-space: nowrap;
                         overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
                         text-overflow: ellipsis;
                         padding-top: 1rem;
                         font-size: 1.2rem;
@@ -35,9 +38,15 @@
             }
             .job__nameCompany{
                 padding-bottom: 0.1rem;
+                width: 95%;
                 a{
                     color: #2c3038;
                     text-decoration: none;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
                 }
             }
             .job__detail{
@@ -86,6 +95,9 @@
             background-color: #faf6f6;
         }
     }
+}
+.ListJob{
+    @include jobBox();
     .col-lg-6{
         margin-bottom: 1rem;
     }
@@ -138,7 +150,7 @@
                         }
                     }
                     &--deadline{
-                        display: flex;
+                        display: none;
                         margin-right: 0.7rem;
                         .job__icon{
                             font-size: .9rem;
@@ -157,31 +169,31 @@
         }
     }
 }
-@media (max-width:1125px){
-    .jobTitle{
-        width: 280px !important;
-    }
-}
-@media (max-width:991px){
-    .jobTitle{
-        width: 500px !important;
-    }
-}
-@media (max-width:768px){
-    .jobTitle{
-        width: 350px !important;
-    }
-}
-@media (max-width:500px){
-    .jobTitle{
-        width: 290px !important;
-    }
-}
-@media (max-width:375px){
-    .jobTitle{
-        width: 230px !important;
-    }
-    .outSize{
-        display: none !important;
-    }
-}
+// @media (max-width:1125px){
+//     .jobTitle{
+//         width: 280px !important;
+//     }
+// }
+// @media (max-width:991px){
+//     .jobTitle{
+//         width: 500px !important;
+//     }
+// }
+// @media (max-width:768px){
+//     .jobTitle{
+//         width: 350px !important;
+//     }
+// }
+// @media (max-width:500px){
+//     .jobTitle{
+//         width: 290px !important;
+//     }
+// }
+// @media (max-width:375px){
+//     .jobTitle{
+//         width: 230px !important;
+//     }
+//     .outSize{
+//         display: none !important;
+//     }
+// }

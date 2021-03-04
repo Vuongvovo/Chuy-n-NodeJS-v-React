@@ -1,5 +1,5 @@
 .footer{
-    background: url("../images/dots.png");
+    background: url("../../images/dots.png");
     background-color: #353a40;
     .container-footer{
         color: #ffffff;
@@ -12,6 +12,7 @@
                     border-bottom: 1px ridge rgba(57, 57, 58, 0.46);
                     margin-bottom: 1rem;
                     font-weight: 300 !important;
+                    color: white;
                 }
             }
             .footer__content{
@@ -19,7 +20,6 @@
                 font-size: .9rem;
                 .about{
                     text-align: justify;
-                    
                 }
                 ul{
                     margin: 0;

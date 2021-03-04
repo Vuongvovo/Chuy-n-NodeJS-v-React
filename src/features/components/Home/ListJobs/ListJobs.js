@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import "../../../scss/ListJobs.scss"
+import "../../../scss/Home/ListJobs.scss"
 import logo from "../../../images/logoNew2.png"
 // import "./ListJobsjs"
 export default function ListJobs() {
@@ -22,10 +22,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -59,10 +59,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -96,10 +96,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">[Tuyển gấp] Lập trình game mobile ngay trong tháng này</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">[Tuyển gấp] Lập trình game mobile ngay trong tháng này</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -133,10 +133,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -170,10 +170,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -207,10 +207,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -244,10 +244,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -281,10 +281,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -318,10 +318,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
@@ -355,10 +355,10 @@ export default function ListJobs() {
                             </div>
                             <div className="job__content">
                                 <div className="job__title">
-                                    <Link to=""><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
+                                    <Link to="/jobs/work/1"><h4 className="jobTitle">Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
                                 </div>
                                 <div className="job__nameCompany">
-                                    <Link to=""><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
+                                    <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
                                 </div>
                                 <div className="job__detail">
                                     <div className="job__detail--address">
