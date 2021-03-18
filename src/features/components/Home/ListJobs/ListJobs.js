@@ -2,13 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../../scss/Home/ListJobs.scss"
 import logo from "../../../images/logoNew2.png"
-// import "./ListJobsjs"
 export default function ListJobs() {
     return (
         <div className="ListJob">
             <div className="heading">
                 <div className="heading__title">
-                    <h3>Công việc nổi bật</h3>
+                    <h3><Link to="/jobs">Công việc</Link> nổi bật</h3>
                 </div>
                 <div className="heading__hr"></div>
             </div>

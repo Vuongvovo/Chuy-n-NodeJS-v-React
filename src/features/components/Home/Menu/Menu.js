@@ -20,13 +20,13 @@ export default function Menu() {
                         <Link to="">Hướng dẫn</Link>
                     </div>
                     <div className="item">
-                        <Link to="">Khoá học</Link>
+                        <Link to="/candidates">Ứng viên</Link>
                     </div>
                     <div className="item">
                         <Link to="/jobs">Việc làm</Link>
                     </div>
                     <div className="item">
-                        <Link to="">Nhà tuyển dụng</Link>
+                        <Link to="/companys">Nhà tuyển dụng</Link>
                     </div>
                     <div className="item">
                         <Link to="">Tạo cv</Link>

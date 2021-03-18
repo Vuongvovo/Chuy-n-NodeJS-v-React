@@ -123,7 +123,7 @@ export default function Jd() {
                         <div className="deadline__box">
                             <div className="deadline">
                                 <div className="deadline__icon">
-                                    <i class="far fa-clock"></i>
+                                    <i className="far fa-clock"></i>
                                 </div>
                                 <div>
                                     <div className="deadline__title">Hạn chót</div>
@@ -131,7 +131,7 @@ export default function Jd() {
                                 </div>
                             </div>
                             <div className="deadline__icon--bot">
-                                <i class="far fa-clock"></i>
+                                <i className="far fa-clock"></i>
                             </div>
                         </div>
                         <div className="save__box">

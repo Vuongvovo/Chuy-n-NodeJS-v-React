@@ -22,7 +22,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -46,7 +46,7 @@ export default function News() {
                                     <img src={anh1} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -70,7 +70,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -94,7 +94,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -118,7 +118,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -142,7 +142,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -166,7 +166,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -190,7 +190,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>
@@ -214,7 +214,7 @@ export default function News() {
                                     <img src={anh} alt="" />
                                 </div>
                                 <div className="new__box__content">
-                                    <Link to="">
+                                    <Link to="/news/detailNew/1">
                                         <div className="new__box__content__title">
                                             Những công việc mà bạn không nên làm khi bắt đầu ra trường
                                         </div>

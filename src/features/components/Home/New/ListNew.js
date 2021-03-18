@@ -8,14 +8,14 @@ export default function ListNew() {
         <div id="news">
             <div className="heading">
                 <div className="heading__title">
-                    <h3>Tin tức mới</h3>
+                    <h3><Link to="/news">Tin tức</Link> mới</h3>
                 </div>
                 <div className="heading__hr"></div>
             </div>
             <div className="container">
                 <div className="row mb-4">
                     <div className="col-sm-6 mb-3" >
-                        <Link to=''>
+                        <Link to="/news/detailNew/1">
                             <div className="news-box">
                                 <div className="img-new">
                                     <img src={anh1} alt="" />
@@ -30,7 +30,7 @@ export default function ListNew() {
                         </Link>
                     </div>
                     <div className="col-sm-6 mb-3" >
-                        <Link to=''>
+                        <Link to="/news/detailNew/1">
                             <div className="news-box">
                                 <div className="img-new">
                                     <img src={anh} alt="" />
@@ -49,7 +49,7 @@ export default function ListNew() {
                 <div className="row">
 
                     <div className="col-md-4 col-sm-6 mb-3" >
-                        <Link to=''>
+                        <Link to="/news/detailNew/1">
                             <div className="news-box">
                                 <div style={{ height: "190px" }}>
                                     <img src={anh} className="w-100 h-100" alt="" />
@@ -64,7 +64,7 @@ export default function ListNew() {
                         </Link>
                     </div>
                     <div className="col-md-4 col-sm-6 mb-3" >
-                        <Link to=''>
+                        <Link to="/news/detailNew/1">
                             <div className="news-box">
                                 <div style={{ height: "190px" }}>
                                     <img src={anh} className="w-100 h-100" alt="" />
@@ -81,7 +81,7 @@ export default function ListNew() {
                     <div className="col-md-4">
                         <div className="row ">
                             <div className="col-md-12" >
-                                <Link to=''>
+                                <Link to="/news/detailNew/1">
                                     <div className="news-box">
                                         <div className="row">
                                             <div className="col-4">
@@ -95,7 +95,7 @@ export default function ListNew() {
                                 </Link>
                             </div>
                             <div className="col-md-12" >
-                                <Link to=''>
+                                <Link to="/news/detailNew/1">
                                     <div className="news-box">
                                         <div className="row">
                                             <div className="col-4">
@@ -109,7 +109,7 @@ export default function ListNew() {
                                 </Link>
                             </div>
                             <div className="col-md-12" >
-                                <Link to=''>
+                                <Link to="/news/detailNew/1">
                                     <div className="news-box">
                                         <div className="row">
                                             <div className="col-4">
@@ -123,7 +123,7 @@ export default function ListNew() {
                                 </Link>
                             </div>
                             <div className="col-md-12" >
-                                <Link to=''>
+                                <Link to="/news/detailNew/1">
                                     <div className="news-box">
                                         <div className="row">
                                             <div className="col-4">
