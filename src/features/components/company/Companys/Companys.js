@@ -27,7 +27,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -45,7 +45,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -63,7 +63,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -81,7 +81,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -99,7 +99,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -117,7 +117,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -135,7 +135,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -153,7 +153,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -171,7 +171,7 @@ export default function Companys() {
                                 </div>
                                 <div className="company__box__name">
                                     Nhà đất mới
-                            </div>
+                                </div>
                                 <div className="company__box__address">
                                     <span>Thanh Xuân, Hà Nội</span>
                                 </div>
@@ -182,6 +182,7 @@ export default function Companys() {
                         </div>
                     </div>
                 </div>
+
                 <div className="pagination">
                     <Pagination defaultCurrent={1} total={100} />
                 </div>

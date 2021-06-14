@@ -3,21 +3,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import anh from "../../../images/xinviec.jpg"
 import "../../../scss/DetailNew/BannerNew.scss"
-export default function BannerNew() {
+export default function BannerNew(props) {
+    console.log(props);
     const style = {
-        background: `url(${anh}) repeat center`,
+        background: `url(${props.img}) repeat center`,
         backgroundSize: "cover"
     }
     return (
         <div className="bannerNew" style={style}>
             <div className="bannerNew__content">
                 <div className="bannerNew__content__title">
-                    <span>Cách trả lời các câu hỏi phỏng vấn xin việc part-time</span>
+                    <span>{props.title}</span>
                 </div>
                 <div className="bannerNew__content__tag">
-                    <div className="newTag"><Link to="">Reactjs</Link></div>
-                    <div className="newTag"><Link to="">JavaScript</Link></div>
-                    <div className="newTag"><Link to="">Phỏng vấn</Link></div>
+                    {props.tags.map(data => (
+                        <div className="newTag"><Link to="">{data.name}</Link></div>
+                    ))}
                 </div>
                 <div className="bannerNew__content__date">
                     <Avatar size="large" src={anh} className="avatarNew" />

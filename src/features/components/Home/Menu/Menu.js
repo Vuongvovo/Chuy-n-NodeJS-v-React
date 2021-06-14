@@ -31,6 +31,9 @@ export default function Menu() {
                     <div className="item">
                         <Link to="">Tạo cv</Link>
                     </div>
+                    <div className="item">
+                        <Link to="/admin">admin</Link>
+                    </div>
                 </nav>
             </div>
         </div>

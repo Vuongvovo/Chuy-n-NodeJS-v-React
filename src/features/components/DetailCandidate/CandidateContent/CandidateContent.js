@@ -5,8 +5,7 @@ export default function CandidateContent() {
     const style = {
         width: '50%'
     }
-    const { register, handleSubmit } = useForm()
-    const onSubmit = (data) => { console.log(data); }
+
     return (
         <div className="candidateContent">
             <div className="container">
@@ -50,7 +49,7 @@ export default function CandidateContent() {
                             </div>
                             <div className="candidate__box__content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. orci urna. In et augue ornare, tempor massa in, luctus sapien. Proin a diam et dui fermentum dolor molestie vel id neque. Donec sed tempus enim, a congue risus. Pellen tesqu euismod massa a quam viverra interdum urna vel id neque, Fermentum viverra eros. Praesent neque purus, rhoncus nec nibh non, mollis sodales odio. Nullam facilisis diam non magna porta luctus. Aenean facilisis erat posuere erat ornare ultrices. Aliquam ac arcu interdum, dapibus nibh convallis, semper augue.
-                            <br />
+                                <br />
                                 Fermentum viverra eros. Praesent neque purus, rhoncus nec nibh non, mollis sodales odio. Nullam facilisis diam non magna porta luctus. Aenean facilisis erat posuere erat ornare ultrices. Aliquam ac arcu interdum, dapibus nibh convallis, semper augue.
                             </div>
                         </div>
@@ -132,11 +131,11 @@ export default function CandidateContent() {
                                 Liên hệ ngay
                             </div>
                             <div className="candidate__box__email">
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                    <input type="text" name="yourName" placeholder="Tên của bạn" ref={register} />
-                                    <input type="text" name="yourEmail" placeholder="Email của bạn" ref={register} />
-                                    <input type="text" name="title" placeholder="Tiêu đề" ref={register} />
-                                    <input type="text" name="messager" placeholder="Tên của bạn" ref={register} />
+                                <form>
+                                    <input type="text" name="yourName" placeholder="Tên của bạn" />
+                                    <input type="text" name="yourEmail" placeholder="Email của bạn" />
+                                    <input type="text" name="title" placeholder="Tiêu đề" />
+                                    <input type="text" name="messager" placeholder="Tên của bạn" />
                                     <input type="submit" value="Gửi" />
                                 </form>
                             </div>

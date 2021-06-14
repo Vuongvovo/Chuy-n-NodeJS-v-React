@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../../../scss/ListNews/News.scss"
-import anh from "../../../images/cup-of-coffee-1280537.jpg"
-import anh1 from "../../../images/notebook-1971495.jpg"
 import { Link } from 'react-router-dom'
-import { Pagination } from 'antd'
+import { Pagination, Spin } from 'antd'
+import { useDispatch, useSelector } from 'react-redux'
+import { checkDate } from '../../../container/Functionjs'
+import { newData } from '../../../admin/Slice/newSlice'
 export default function News() {
+    const news = useSelector(state => state.news.new.data);
+    const loading = useSelector(state => state.news.loading)
+    const dispatch = useDispatch();
+    const [state, setState] = useState({ page: localStorage.getItem("pageNew") || 1 })
+    const { page } = state
+    const actionResult = async (page) => { await dispatch(newData(page)) }
+    useEffect(() => {
+        localStorage.setItem("pageNew", page);
+        actionResult({ page: page });
+    }, [page])
     return (
         <div className="News">
             <div className="heading">
@@ -16,226 +27,35 @@ export default function News() {
             <div className="news__content">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
+                        {loading ? <div className="spin"><Spin className="mt-5" /></div> :
+                            news.rows.map((data) => (
+                                <div className="col-md-4 d-flex">
+                                    <div className="new__box">
+                                        <div className="new__box__img">
+                                            <img src={data.avatar} alt="" />
                                         </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh1} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
+                                        <div className="new__box__content">
+                                            <Link to={`/news/detailNew/${data.id}`}>
+                                                <div className="new__box__content__title">
+                                                    {data.name}
+                                                </div>
+                                            </Link>
+                                            <div className="new__box__content__date">
+                                                {checkDate(data.createdAt)}
+                                            </div>
+                                            <div className="new__box__content__sumary">
+                                                {data.samary}
+                                            </div>
                                         </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
                                     </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
                                 </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
-                                        </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
-                                        </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
-                                        </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
-                                        </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
-                                        </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
-                                        </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="new__box">
-                                <div className="new__box__img">
-                                    <img src={anh} alt="" />
-                                </div>
-                                <div className="new__box__content">
-                                    <Link to="/news/detailNew/1">
-                                        <div className="new__box__content__title">
-                                            Những công việc mà bạn không nên làm khi bắt đầu ra trường
-                                        </div>
-                                    </Link>
-                                    <div className="new__box__content__date">
-                                        October 7, 2019.
-                                    </div>
-                                    <div className="new__box__content__sumary">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, minus? Totam fuga eum omnis dolores! Doloremque error eveniet nam corporis in labore, magnam velit natus, commodi eius at itaque aspernatur.
-                                        Quas aliquid dolores nisi, cumque quo repellendus sed itaque sapiente voluptas saepe dolorum esse repudiandae molestiae deserunt alias laudantium praesentium! Necessitatibus perferendis id hic dignissimos porro totam provident dolorem amet.
-                                        Placeat, error ratione earum quidem obcaecati esse dignissimos voluptates soluta odit. Facere dolorum, ex tempore deleniti eius ipsum necessitatibus dolores nulla numquam totam, quasi laborum ea repellendus harum assumenda incidunt.
-                                        Suscipit similique eius deserunt esse doloribus aliquid fuga, doloremque deleniti cum saepe tempore perspiciatis sapiente rerum explicabo dolor necessitatibus. Unde accusamus voluptatem labore officia adipisci architecto ullam, sed consectetur exercitationem!
-                                        Debitis voluptates ad non aspernatur earum officia quidem cum nobis excepturi qui porro explicabo error impedit, quae quas voluptatum vitae mollitia labore quis atque harum? Obcaecati unde facilis corrupti in.
-                                </div>
-                                </div>
-                            </div>
-                        </div>
+                            ))
+                        }
                     </div>
-                    <div className="pagination">
-                        <Pagination defaultCurrent={1} total={100} />
-                    </div>
+                    {loading ? "" :
+                        <div className="pagination">
+                            <Pagination defaultCurrent={page} total={news.count} />
+                        </div>}
                 </div>
             </div>
         </div>

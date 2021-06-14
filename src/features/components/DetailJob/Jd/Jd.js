@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import "../../../scss/DetailJob/Jd.scss"
 import qc from "../../../images/1227.gif"
 import KeyTag from '../../Jobs/ListJobs/KeyTag'
-export default function Jd() {
+export default function Jd(props) {
+    let data = props.data
     return (
         <div className="Jd">
             <div className="container">
@@ -11,24 +12,24 @@ export default function Jd() {
                     <div className="col-md-9 ">
                         <div className="job__box">
                             <div className="job__box__title">
-                                <h4>Thực Tập Sinh Lập Trình Viên (Reactjs, React Native)</h4>
+                                <h4>{data.name}</h4>
                             </div>
                             <div className="job__box__detail">
                                 <div className="job__box__detail--address">
                                     <i className="fas fa-map-marker-alt"></i>
-                                    Hà nội
+                                    {data.address}
                                 </div>
                                 <div className="job__box__detail--fulltime">
                                     <i className="fas fa-hourglass-half"></i>
-                                Fulltime
+                                    {data.nature}
                                 </div>
                                 <div className="job__box__detail--status">
                                     <i className="fas fa-unlock-alt"></i>
-                                Hết hạn
+                                    Hết hạn
                                 </div>
                                 <div className="job__box--detail--salary">
                                     <i className="fas fa-dollar-sign"></i>
-                                10 triệu
+                                    {data.price} triệu
                                 </div>
                             </div>
                             <div className="apply">
@@ -41,10 +42,8 @@ export default function Jd() {
                                     <p>Mô tả công việc</p>
                                 </div>
                                 <div className="job__box__content--jd">
-                                    - Tham gia vào các dự án về phát triển mobile apps của công ty<br />
-                                - Vui lòng ghi rõ vị trí thực tập sinh Reactjs, React Native Developer trong tiêu đề email<br />
-                                - CV chi tiết về các sản phẩm, dự án đã làm và quá trình training, làm việc<br />
-                                - Khả năng/kinh nghiệm liên quan đến lập trình<br />
+                                    {data.interest}
+                                    <br />
                                 </div>
                             </div>
                             <div>
@@ -52,11 +51,7 @@ export default function Jd() {
                                     <p>Yêu cầu công việc</p>
                                 </div>
                                 <div className="job__box__content--jd">
-                                    • Đam mê tìm hiểu về các công nghệ lập trình,<br />
-                                    • Vừa tốt nghiệp hoặc sinh viên năm cuối các trường ,<br />cao đẳng, đại học, dạy nghề,…
-                                    • Chăm chỉ, có khả năng tự nghiên cứu, giao tiếp tốt,<br />
-                                    • Có kiến thức và kĩ năng tốt với Javascript, CSS3, HTML5,<br />
-                                    • Ưu tiên:o Có kiến thức về ReactJs or React native o Có kiến thức về NodeJs o Có kinh nghiệm sử dụng source control systems như Git, SVN.
+                                    {data.form}
                                 </div>
                             </div>
                             <div>
@@ -82,7 +77,7 @@ export default function Jd() {
                                     <p>Địa điểm làm việc</p>
                                 </div>
                                 <div className="job__box__content--jd">
-                                    • Hà nội
+                                    {data.address}
                                 </div>
                             </div>
                             <div>
@@ -98,7 +93,7 @@ export default function Jd() {
                                     <p>Tính chất công việc</p>
                                 </div>
                                 <div className="job__box__content--jd">
-                                    toàn thời gian
+                                    {data.nature}
                                 </div>
                             </div>
                             <div>
@@ -106,7 +101,7 @@ export default function Jd() {
                                     <p>Yêu cầu bằng cấp(tối thiểu)</p>
                                 </div>
                                 <div className="job__box__content--jd">
-                                    Cao đẳng
+                                    {data.request}
                                 </div>
                             </div>
                             <div>
@@ -114,7 +109,7 @@ export default function Jd() {
                                     <p>Yêu cầu kinh nghiệm</p>
                                 </div>
                                 <div className="job__box__content--jd">
-                                    Không yêu cầu kinh nghiệm
+                                    {data.exprience}
                                 </div>
                             </div>
                         </div>

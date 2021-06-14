@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import './App.scss';
 import Home from './features/components/Home/Home';
@@ -14,7 +14,8 @@ import DetailCompany from './features/components/DetailCompany/DetailCompany';
 import Candidates from './features/components/Candidates/Candidates';
 import DetailCandidate from './features/components/DetailCandidate/DetailCandidate';
 import Login from './features/components/Login/Login';
-
+import Admin from './app/Admin';
+import Register from './features/components/Register/Register';
 function App() {
   useEffect(() => {
     checkBar();
@@ -25,6 +26,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/admin" >
+            <Ladmin />
           </Route>
           <Route exact path="/jobs">
             <Jobs />
@@ -53,10 +57,20 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
         </Switch>
       </Router>
     </div>
   );
 }
-
+function Ladmin() {
+  let { path, url } = useRouteMatch();
+  // if (localStorage.getItem("token")) {
+  return <Admin path={path} url={url} />
+  // } else {
+  //   return <Error />
+  // }
+}
 export default App;

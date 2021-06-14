@@ -18,11 +18,11 @@ export default function Login() {
                         <div className="login__box__left__title">
                             Tài khoản
                         </div>
-                        <input type="text" name="username" placeholder="Email" ref={register} />
+                        <input type="text" {...register("username")} placeholder="Email" />
                         <div className="login__box__left__title">
                             Mật khẩu
                         </div>
-                        <input type="password" name="password" placeholder="Mật khẩu" ref={register} />
+                        <input type="password" {...register("password")} placeholder="Mật khẩu" />
                         <Checkbox >Nhớ mật khẩu</Checkbox>
                         <div className="login__box__left__button">
                             <input type="submit" value="Đăng nhập" />
@@ -37,7 +37,7 @@ export default function Login() {
                         <button className="fb">Đăng nhập với facebook</button>
                         <button className="in">Đăng nhập với instagram</button>
                         <div className="login__box__right__text">
-                            Chưa có tài khoản? <Link to="">Đăng ký</Link> ở đây
+                            Chưa có tài khoản? <Link to="/register">Đăng ký</Link> ở đây
                         </div>
                     </div>
                 </div>

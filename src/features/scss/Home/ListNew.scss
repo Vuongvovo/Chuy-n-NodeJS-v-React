@@ -31,6 +31,12 @@
 
 #news .row .content-news p {
   padding: 0px 1rem 0rem 1rem;
+  overflow: hidden;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 #news .row .row .heading {

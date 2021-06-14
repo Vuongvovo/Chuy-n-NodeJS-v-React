@@ -2,7 +2,7 @@ import React from 'react'
 import logo from "../../../images/logoNew2.png"
 import "../../../scss/DetailJob/BannerJob.scss"
 import bannerImg from "../../../images/phong-lam-viec-day-du-anh-sang.jpg"
-export default function BannerJob() {
+export default function BannerJob(props) {
     const style = {
         background: `url(${bannerImg}) repeat center`,
         backgroundSize: 'cover'
@@ -16,7 +16,7 @@ export default function BannerJob() {
                     </div>
                     <div className="bannerJob__content__title">
                         <div className="title--top">Mời bạn đến với công ty</div>
-                        <div className="title--bot">Tên công ty</div>
+                        <div className="title--bot">{props.name}</div>
                     </div>
                 </div>
             </div>
