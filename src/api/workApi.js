@@ -6,6 +6,10 @@ class WorkApi {
         const url = '/works';
         return axiosClient.get(url, { params });
     };
+    getAllId = (params) => {
+        const url = '/workId';
+        return axiosClient.get(url, { params });
+    };
     getOne = (params) => {
         const url = `/works/${params}`;
         return axiosClient.get(url).then(data => {
@@ -14,7 +18,11 @@ class WorkApi {
     };
     postwork = (params) => {
         const url = '/works';
-        return axiosClient.post(url, params)
+        return axiosClient.post(url, params).then(data => {
+            message.success("Thêm công việc thành công!");
+        }).catch(err => {
+            message.error("Có lỗi xảy ra!");
+        });
     };
     deletework = (id) => {
         const url = `/works/${id}`;

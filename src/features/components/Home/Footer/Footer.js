@@ -1,7 +1,19 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { contactData } from '../../../admin/Slice/contactSlice'
 import "../../../scss/Home/Footer.scss"
 export default function Footer() {
+    const dispatch = useDispatch()
+    const actionResult = async () => { await dispatch(contactData({ status: 1 })) }
+    const contact = useSelector(state => state.contacts.contact.data);
+    const loadingContact = useSelector(state => state.contacts.loading);
+    const ok = !loadingContact ? contact.rows[0] : []
+
+    useEffect(() => {
+        actionResult();
+    }, [])
     return (
         <div className="footer">
             <div className="container-footer">
@@ -14,10 +26,8 @@ export default function Footer() {
                             <div className="footer__content">
                                 <div className="about">
                                     <span >
-                                        Chúng tối là công ty tìm kiếm việc làm nhanh chóng
-                                        với tiêu chí khách hàng là thượng đế. rất mong muốn được mọi người
-                                        đón nhận.
-                                </span>
+                                        {ok.description}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +43,7 @@ export default function Footer() {
                                         Địa chỉ :
                                     </div>
                                     <div className="location--content">
-                                        Số 5, Đường Minh Khai, toà nhà BigCity, thành phố Vinh.
+                                        {ok.address}
                                     </div>
                                 </div>
                                 <div className="footer__content--contact">
@@ -41,13 +51,14 @@ export default function Footer() {
                                         Liên hệ :
                                     </div>
                                     <div className="contact--content">
-                                        <span>Điện thoại: +8438329473</span><br />
-                                        <span>Email: kiennvdhv@gmail.com</span>
+                                        <span>Điện thoại: {ok.phone}</span><br />
+                                        <span>Email: {ok.email}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div className="col-lg-3">
                         <div className="footer__box">
                             <div className="footer__title">

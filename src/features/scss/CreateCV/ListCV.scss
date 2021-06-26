@@ -1,0 +1,44 @@
+.listCv{
+    .box{
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        &-img{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        &-tag{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            p{
+                padding: .2rem .4rem;
+                border-radius: 5px;
+                background-color: #e4f7ed;
+                margin-left: .6rem;
+                color: #0daa53;
+                font-weight: 600;
+                font-size: .7rem;
+            }
+        }
+        &-name{
+            p{
+                margin-left: 0.6rem;
+                font-size: .9rem;
+                color: black;
+            }
+        }
+        &-color{
+            display: flex;
+            padding-bottom: 1rem;
+            .color{
+                width: 15px;
+                height: 15px;
+                margin-left: 0.6rem;
+                background-color: #e40138;
+                border-radius: 50%;
+            }
+        }
+    }
+}

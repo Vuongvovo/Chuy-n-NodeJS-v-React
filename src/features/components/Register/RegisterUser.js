@@ -2,6 +2,9 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { message } from 'antd';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 export default function RegisterUser() {
     const schema = yup.object().shape({
         userName: yup.string().email().required(),
@@ -12,7 +15,24 @@ export default function RegisterUser() {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     })
-    const onSubmit = (data) => { console.log(data); }
+    const banner = "https://static.ohga.it/wp-content/uploads/sites/24/2020/02/lavoro-precario-convivere.jpg"
+    const avatar = "https://vn-live-02.slatic.net/p/49c931dd11cde1e48fee9a07424a22dc.jpg"
+    const address = "Việt Nam"
+    const history = useHistory()
+    const onSubmit = (data) => {
+        const dataUser = { address, banner, avatar, name: data.name, email: data.userName, password: data.password, status: 1 }
+        const link = "http://localhost:666/users"
+        axios.post(link, dataUser).then(ok => {
+            if (ok.data.data === "email đã tồn tại!") {
+                message.info("Email đã được đăng ký!")
+            } else {
+                message.success("Đăng ký tài khoản thành công!")
+                history.push("/login");
+            }
+        }).catch(er => {
+            console.log(er);
+        })
+    }
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>

@@ -14,7 +14,6 @@ export default function ListNew() {
     const new2 = [];
     const new3 = [];
     if (news) {
-        console.log(news.rows);
         for (let i = 0; i <= news.rows.length; i++) {
             if (new1.length < 2) {
                 new1.push(news.rows[i])

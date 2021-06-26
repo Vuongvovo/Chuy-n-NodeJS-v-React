@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../../scss/DetailCompany/ContentCompany.scss"
 import logo from "../../../images/logoNew2.png"
-import { useForm } from 'react-hook-form'
-export default function ContentCompany() {
+import renderHTML from 'react-render-html';
+import Jobs from "../../inforCompany/Tabs/Jobs/Jobs"
+import { checkDateCompany } from '../../../container/Functionjs'
+export default function ContentCompany({ data }) {
 
     return (
         <div className="contentCompany">
@@ -15,9 +17,7 @@ export default function ContentCompany() {
                                 Giới thiệu
                             </div>
                             <div className="company__box__content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. orci urna. In et augue ornare, tempor massa in, luctus sapien. Proin a diam et dui fermentum dolor molestie vel id neque. Donec sed tempus enim, a congue risus. Pellen tesqu euismod massa a quam viverra interdum urna vel id neque, Fermentum viverra eros. Praesent neque purus, rhoncus nec nibh non, mollis sodales odio. Nullam facilisis diam non magna porta luctus. Aenean facilisis erat posuere erat ornare ultrices. Aliquam ac arcu interdum, dapibus nibh convallis, semper augue.
-                                <br />
-                                Fermentum viverra eros. Praesent neque purus, rhoncus nec nibh non, mollis sodales odio. Nullam facilisis diam non magna porta luctus. Aenean facilisis erat posuere erat ornare ultrices. Aliquam ac arcu interdum, dapibus nibh convallis, semper augue.
+                                {data.introduce ? renderHTML(data.introduce) : ""}
                             </div>
                         </div>
                         <div className="job">
@@ -25,217 +25,7 @@ export default function ContentCompany() {
                                 Việc đã đăng tuyển
                             </div>
                             <div className="job__content">
-                                <div className="job__box">
-                                    <div className="job__tag">hot</div>
-                                    <div className="job__logo">
-                                        <img src={logo} alt="ok" />
-                                    </div>
-                                    <div className="job__content">
-                                        <div className="job__title">
-                                            <Link to="/jobs/work/1"><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
-                                        </div>
-                                        <div className="job__nameCompany">
-                                            <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
-                                        </div>
-                                        <div className="job__detail">
-                                            <div className="job__detail--address">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-map-marker-alt"></i>
-                                                </div>
-                                                <span>Hà nội</span>
-                                            </div>
-                                            <div className="job__detail--deadline outSize outSize">
-                                                <div className="job__icon">
-                                                    <i className="far fa-clock"></i>
-                                                </div>
-                                                <span>26/03/2021</span>
-                                            </div>
-                                            <div className="job__detail--salary">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-dollar-sign"></i>
-                                                </div>
-                                                <span>7 - 14 Triệu VNĐ</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className="job__box">
-                                    <div className="job__tag">hot</div>
-                                    <div className="job__logo">
-                                        <img src={logo} alt="ok" />
-                                    </div>
-                                    <div className="job__content">
-                                        <div className="job__title">
-                                            <Link to="/jobs/work/1"><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
-                                        </div>
-                                        <div className="job__nameCompany">
-                                            <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
-                                        </div>
-                                        <div className="job__detail">
-                                            <div className="job__detail--address">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-map-marker-alt"></i>
-                                                </div>
-                                                <span>Hà nội</span>
-                                            </div>
-                                            <div className="job__detail--deadline outSize outSize">
-                                                <div className="job__icon">
-                                                    <i className="far fa-clock"></i>
-                                                </div>
-                                                <span>26/03/2021</span>
-                                            </div>
-                                            <div className="job__detail--salary">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-dollar-sign"></i>
-                                                </div>
-                                                <span>7 - 14 Triệu VNĐ</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className="job__box">
-                                    <div className="job__tag">hot</div>
-                                    <div className="job__logo">
-                                        <img src={logo} alt="ok" />
-                                    </div>
-                                    <div className="job__content">
-                                        <div className="job__title">
-                                            <Link to="/jobs/work/1"><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
-                                        </div>
-                                        <div className="job__nameCompany">
-                                            <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
-                                        </div>
-                                        <div className="job__detail">
-                                            <div className="job__detail--address">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-map-marker-alt"></i>
-                                                </div>
-                                                <span>Hà nội</span>
-                                            </div>
-                                            <div className="job__detail--deadline outSize outSize">
-                                                <div className="job__icon">
-                                                    <i className="far fa-clock"></i>
-                                                </div>
-                                                <span>26/03/2021</span>
-                                            </div>
-                                            <div className="job__detail--salary">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-dollar-sign"></i>
-                                                </div>
-                                                <span>7 - 14 Triệu VNĐ</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className="job__box">
-                                    <div className="job__tag">hot</div>
-                                    <div className="job__logo">
-                                        <img src={logo} alt="ok" />
-                                    </div>
-                                    <div className="job__content">
-                                        <div className="job__title">
-                                            <Link to="/jobs/work/1"><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
-                                        </div>
-                                        <div className="job__nameCompany">
-                                            <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
-                                        </div>
-                                        <div className="job__detail">
-                                            <div className="job__detail--address">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-map-marker-alt"></i>
-                                                </div>
-                                                <span>Hà nội</span>
-                                            </div>
-                                            <div className="job__detail--deadline outSize outSize">
-                                                <div className="job__icon">
-                                                    <i className="far fa-clock"></i>
-                                                </div>
-                                                <span>26/03/2021</span>
-                                            </div>
-                                            <div className="job__detail--salary">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-dollar-sign"></i>
-                                                </div>
-                                                <span>7 - 14 Triệu VNĐ</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className="job__box">
-                                    <div className="job__tag">hot</div>
-                                    <div className="job__logo">
-                                        <img src={logo} alt="ok" />
-                                    </div>
-                                    <div className="job__content">
-                                        <div className="job__title">
-                                            <Link to="/jobs/work/1"><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
-                                        </div>
-                                        <div className="job__nameCompany">
-                                            <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
-                                        </div>
-                                        <div className="job__detail">
-                                            <div className="job__detail--address">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-map-marker-alt"></i>
-                                                </div>
-                                                <span>Hà nội</span>
-                                            </div>
-                                            <div className="job__detail--deadline outSize outSize">
-                                                <div className="job__icon">
-                                                    <i className="far fa-clock"></i>
-                                                </div>
-                                                <span>26/03/2021</span>
-                                            </div>
-                                            <div className="job__detail--salary">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-dollar-sign"></i>
-                                                </div>
-                                                <span>7 - 14 Triệu VNĐ</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div className="job__box">
-                                    <div className="job__tag">hot</div>
-                                    <div className="job__logo">
-                                        <img src={logo} alt="ok" />
-                                    </div>
-                                    <div className="job__content">
-                                        <div className="job__title">
-                                            <Link to="/jobs/work/1"><h4 className="jobTitle" >Thực tập sinh lập trình web abc asa sda sdasdas abcasasdasdasdas abcasasdasdasdas</h4></Link>
-                                        </div>
-                                        <div className="job__nameCompany">
-                                            <Link to="/jobs/work/1"><span>Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart Công ty Cổ phần Nghiên cứu và Sản xuất Vinsmart</span></Link>
-                                        </div>
-                                        <div className="job__detail">
-                                            <div className="job__detail--address">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-map-marker-alt"></i>
-                                                </div>
-                                                <span>Hà nội</span>
-                                            </div>
-                                            <div className="job__detail--deadline outSize outSize">
-                                                <div className="job__icon">
-                                                    <i className="far fa-clock"></i>
-                                                </div>
-                                                <span>26/03/2021</span>
-                                            </div>
-                                            <div className="job__detail--salary">
-                                                <div className="job__icon">
-                                                    <i className="fas fa-dollar-sign"></i>
-                                                </div>
-                                                <span>7 - 14 Triệu VNĐ</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
+                                <Jobs id={data.id} />
                             </div>
                         </div>
                     </div>
@@ -253,7 +43,7 @@ export default function ContentCompany() {
                                         Tham gia
                                     </div>
                                     <div className="company__box__detail__content">
-                                        Tháng 12/ 2021
+                                        {checkDateCompany(data.createdAt)}
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +56,7 @@ export default function ContentCompany() {
                                         Địa điểm
                                     </div>
                                     <div className="company__box__detail__content">
-                                        Thanh xuân, Hà nội
+                                        {data.address}
                                     </div>
                                 </div>
                             </div>
@@ -279,7 +69,7 @@ export default function ContentCompany() {
                                         Email
                                     </div>
                                     <div className="company__box__detail__content">
-                                        nhadatmoi@gmail.com
+                                        {data.email}
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +82,7 @@ export default function ContentCompany() {
                                         Điện thoại
                                     </div>
                                     <div className="company__box__detail__content">
-                                        +84984093331
+                                        {data.phone ? data.phone : <span className="text-danger">Chưa cập nhật</span>}
                                     </div>
                                 </div>
                             </div>

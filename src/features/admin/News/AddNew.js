@@ -19,7 +19,7 @@ export default function AddNew() {
     const [content, setContent] = useState('')
     const dispatch = useDispatch();
     const { reset, register, handleSubmit, formState: { errors } } = useForm();
-    const actiontag = async () => { await dispatch(tagData()) }
+    const actiontag = async () => { await dispatch(tagData({ status: 1 })) }
     const actionResult = async (page) => { await dispatch(newData(page)) }
     const getApi = async () => {
         return await newApi.getOne(id).then(data => {
@@ -149,7 +149,7 @@ export default function AddNew() {
                             <input type="file" hidden="true" name="" id="img" onChange={hangdelimage} />
                             {linkImg ? <img src={linkImg} className="ml-3" height="150px" width="250px" alt="" /> : anh ? <img src={anh} className="ml-5" height="150px" width="250px" alt="" /> : ''}
                             <br />
-                            <span>{tenanh}</span>
+                            {tenanh ? <span><span className="text-danger">Tên ảnh</span>: {tenanh}</span> : ""}
                         </div>
                         <div className="form-group">
                             <label htmlFor="">Tags liên quan</label><br />

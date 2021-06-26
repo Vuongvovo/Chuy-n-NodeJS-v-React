@@ -25,8 +25,6 @@ export default function Register() {
                     <div className="register__box__left--account">
                         <button className="account" autoFocus onClick={() => { onChange(1) }}>Tài khoản người dùng</button>
                         <button className="account" onClick={() => { onChange(2) }}>Tài khoản công ty</button>
-                        {/* <div className="account active" onClick={() => { onChange(1) }}>Tài khoản người dùng</div>
-                        <div className="account" onClick={() => { onChange(2) }}>Tài khoản công ty</div> */}
                     </div>
                     {check === 1 ? <RegisterUser /> : <RegisterCompany />}
                 </div>

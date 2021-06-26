@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Pagination, Popconfirm, Spin, Table } from 'antd'
+import { Button, Pagination, Popconfirm, Image, Spin, Table } from 'antd'
 import { Link, useHistory, useRouteMatch } from 'react-router-dom';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
@@ -79,7 +79,7 @@ export default function New() {
                             {
                                 key: index + 1,
                                 name: ok.name,
-                                avatar: <div><img src={ok.avatar} width="200px" height="150px" alt="" /></div>,
+                                avatar: <Image src={ok.avatar} width="200px" />,
                                 status: <div className="action">{ok.status === 1 ? <Link onClick={() => { handleStatus(ok.status, ok.id) }}><i className="far fa-thumbs-up "></i></Link> : <Link onClick={() => handleStatus(ok.status, ok.id)}><i className="far fa-thumbs-down "></i></Link>}</div>,
                                 action:
                                     <div className="action">

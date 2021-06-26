@@ -1,7 +1,9 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import renderHTML from 'react-render-html';
+import { checkDateCompany } from '../../../container/Functionjs';
+
 import "../../../scss/DetailCandidate/CandidateContent.scss"
-export default function CandidateContent() {
+export default function CandidateContent({ data }) {
     const style = {
         width: '50%'
     }
@@ -48,9 +50,7 @@ export default function CandidateContent() {
                                 Giới thiệu
                             </div>
                             <div className="candidate__box__content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. orci urna. In et augue ornare, tempor massa in, luctus sapien. Proin a diam et dui fermentum dolor molestie vel id neque. Donec sed tempus enim, a congue risus. Pellen tesqu euismod massa a quam viverra interdum urna vel id neque, Fermentum viverra eros. Praesent neque purus, rhoncus nec nibh non, mollis sodales odio. Nullam facilisis diam non magna porta luctus. Aenean facilisis erat posuere erat ornare ultrices. Aliquam ac arcu interdum, dapibus nibh convallis, semper augue.
-                                <br />
-                                Fermentum viverra eros. Praesent neque purus, rhoncus nec nibh non, mollis sodales odio. Nullam facilisis diam non magna porta luctus. Aenean facilisis erat posuere erat ornare ultrices. Aliquam ac arcu interdum, dapibus nibh convallis, semper augue.
+                                {data.introduce ? renderHTML(data.introduce) : ""}
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ export default function CandidateContent() {
                                         Tham gia
                                     </div>
                                     <div className="candidate__box__detail__content">
-                                        Tháng 12/ 2021
+                                        {checkDateCompany(data.createdAt)}
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ export default function CandidateContent() {
                                         Địa điểm
                                     </div>
                                     <div className="candidate__box__detail__content">
-                                        Thanh xuân, Hà nội
+                                        {data.address}
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@ export default function CandidateContent() {
                                         Email
                                     </div>
                                     <div className="candidate__box__detail__content">
-                                        nhadatmoi@gmail.com
+                                        {data.email}
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ export default function CandidateContent() {
                                         Điện thoại
                                     </div>
                                     <div className="candidate__box__detail__content">
-                                        +84984093331
+                                        {data.phone ? data.phone : <span className="text-danger">Chưa cập nhật</span>}
                                     </div>
                                 </div>
                             </div>

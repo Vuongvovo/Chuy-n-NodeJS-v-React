@@ -6,6 +6,7 @@
         border-radius: 4px;
         padding: .5rem 1rem 1rem 1rem;
         position: relative;
+        
         &__title{
             padding: 1rem 0rem;
             h4{
@@ -15,7 +16,7 @@
         &__detail{
             display: flex;
             flex-wrap: wrap;
-            font-size: 1.1rem;
+            font-size: .9rem;
             .fas{
                 margin-right: 0.5rem;
             }
@@ -25,7 +26,7 @@
             }
             &--fulltime{
                 margin-right: 3rem;
-
+                text-transform: capitalize;
             }
             &--status{
                 margin-right: 3rem;

@@ -16,6 +16,10 @@ import DetailCandidate from './features/components/DetailCandidate/DetailCandida
 import Login from './features/components/Login/Login';
 import Admin from './app/Admin';
 import Register from './features/components/Register/Register';
+import InforCompany from './features/components/inforCompany/InforCompany';
+import InforUser from './features/components/inforUser/InforUser';
+import CreateCv from './features/components/CreateCv/CreateCv';
+import DetailFormCV from "./features/components/DetaiFormCV/DetaiFormCV"
 function App() {
   useEffect(() => {
     checkBar();
@@ -60,6 +64,19 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
+          <Route exact path="/inforCompany">
+            <InforCompany />
+          </Route>
+          <Route exact path="/inforUser">
+            <InforUser />
+          </Route>
+          <Route exact path="/createCv">
+            <CreateCv />
+          </Route>
+          <Route exact path="/detaiFormCV/:id">
+            <DetailFormCV />
+          </Route>
+
         </Switch>
       </Router>
     </div>

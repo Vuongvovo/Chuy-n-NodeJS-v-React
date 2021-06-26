@@ -1,18 +1,16 @@
 import React from 'react'
-import logo from "../../../images/logoNew2.png"
 import "../../../scss/DetailJob/BannerJob.scss"
-import bannerImg from "../../../images/phong-lam-viec-day-du-anh-sang.jpg"
 export default function BannerJob(props) {
-    const style = {
-        background: `url(${bannerImg}) repeat center`,
-        backgroundSize: 'cover'
-    }
+
     return (
         <div className="bannerJob">
-            <div className="container" style={style}>
+            <div className="container" style={{
+                background: `url(${props.banner}) repeat center`,
+                backgroundSize: 'cover'
+            }}>
                 <div className="bannerJob__content">
                     <div className="bannerJob__content__logo">
-                        <img src={logo} alt="" />
+                        <img src={props.avatar} alt="" />
                     </div>
                     <div className="bannerJob__content__title">
                         <div className="title--top">Mời bạn đến với công ty</div>

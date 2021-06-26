@@ -5,9 +5,9 @@
     .job__box{
         margin-bottom: 1rem;
         &:hover{
-            transform: translateY(0px);
+            transform: translateY(-1px);
             background-color: transparent;
-            border-color: #192134;
+            // border-color: #192134;
         }
     }
     .box__filter{

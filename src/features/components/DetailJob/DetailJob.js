@@ -22,14 +22,14 @@ export default function DetailJob() {
                 setData(data[0])
             });
     }, [])
-    console.log(data);
+    // console.log(data);
     return (
         <div>
             <Menu />
             <Breadcrumb name={data ? data.name : ""} />
             <Search />
-            <BannerJob name={data ? data.Company.name : ""} />
-            <Jd data={data ? data : ""} />
+            <BannerJob name={data ? data.Company.name : ""} avatar={data ? data.Company.avatar : ""} banner={data ? data.Company.banner : ""} />
+            {data ? <Jd data={data} id={id} /> : ""}
             <Footer />
         </div>
     )
