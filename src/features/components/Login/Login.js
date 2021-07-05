@@ -16,9 +16,9 @@ export default function Login() {
     });
     const history = useHistory()
     const onSumit = async (data) => {
-        await loginApi.loginCompany({ email: data.userName, password: data.password }).then(ok => {
+        await loginApi.loginCompany({ email: data.userName, password: data.password, status: 1 }).then(ok => {
             if (ok === "err") {
-                loginApi.loginUser({ email: data.userName, password: data.password }).then(ok => {
+                loginApi.loginUser({ email: data.userName, password: data.password, status: 1 }).then(ok => {
                     if (ok === "err") {
                         message.error("Sai tên đăng nhập hoặc mật khẩu!")
                     } else {

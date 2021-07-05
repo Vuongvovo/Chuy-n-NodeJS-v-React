@@ -1,4 +1,5 @@
 @import "../Home/ListJobs.scss"; 
+@import "../Variable.scss";
 .ListJobSearch{
     @include jobBox();
     margin-top: 2rem;
@@ -9,6 +10,7 @@
             background-color: transparent;
             // border-color: #192134;
         }
+        
     }
     .box__filter{
         margin-bottom: 2rem;

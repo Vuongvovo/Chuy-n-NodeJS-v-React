@@ -17,10 +17,11 @@ export default function RegisterUser() {
     })
     const banner = "https://static.ohga.it/wp-content/uploads/sites/24/2020/02/lavoro-precario-convivere.jpg"
     const avatar = "https://vn-live-02.slatic.net/p/49c931dd11cde1e48fee9a07424a22dc.jpg"
-    const address = "Việt Nam"
+    const address = "Hà Nội"
     const history = useHistory()
     const onSubmit = (data) => {
-        const dataUser = { address, banner, avatar, name: data.name, email: data.userName, password: data.password, status: 1 }
+        const asUserRole = [{ roleId: 2 }]
+        const dataUser = { address, banner, avatar, name: data.name, email: data.userName, password: data.password, asUserRole, status: 1 }
         const link = "http://localhost:666/users"
         axios.post(link, dataUser).then(ok => {
             if (ok.data.data === "email đã tồn tại!") {

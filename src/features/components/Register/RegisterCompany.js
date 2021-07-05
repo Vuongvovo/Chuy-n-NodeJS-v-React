@@ -21,7 +21,7 @@ export default function RegisterCompany() {
     })
     const banner = "https://phuoc-associates.com/wp-content/uploads/2019/10/5-Things-To-Keep-In-Mind-When-Opening-A-Company-In-Vietnam.jpg";
     const avatar = "https://www.mintformations.co.uk/blog/wp-content/uploads/2020/05/shutterstock_583717939.jpg"
-    const address = "Việt Nam"
+    const address = "Hà Nội"
     const dispatch = useDispatch()
     const history = useHistory()
     const actionResult = async () => { await dispatch(companyData()) }

@@ -3,12 +3,17 @@ import { Button, Pagination, Popconfirm, Spin, Table } from 'antd'
 import { Link, useHistory, useRouteMatch } from 'react-router-dom';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
+import renderHTML from 'react-render-html';
 import { removetypeWork, typeWorkData, updatetypeWork } from '../Slice/typeWorkSlice';
 export default function TypeWork() {
     const columns = [
         {
             title: 'tên loại công việc',
             dataIndex: 'name',
+        },
+        {
+            title: 'icon',
+            dataIndex: 'icon',
         },
         {
             title: 'Tình trạng',
@@ -75,6 +80,7 @@ export default function TypeWork() {
                             {
                                 key: index + 1,
                                 name: ok.name,
+                                icon: <div className="iconTypeWork">{renderHTML(ok.icon)}</div>,
                                 status: <div className="action">{ok.status === 1 ? <Link onClick={() => { handleStatus(ok.status, ok.id) }}><i className="far fa-thumbs-up "></i></Link> : <Link onClick={() => handleStatus(ok.status, ok.id)}><i className="far fa-thumbs-down "></i></Link>}</div>,
                                 action:
                                     <div className="action">

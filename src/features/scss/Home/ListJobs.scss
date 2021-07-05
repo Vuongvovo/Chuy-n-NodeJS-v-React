@@ -1,3 +1,4 @@
+@import "../Variable.scss";
 @mixin jobBox {
     .job__box{
         border-radius: 5px;
@@ -17,6 +18,25 @@
             img{
                 width: 100%;
                 height: 100%;
+            }
+        }
+        .btn-delete-job{
+            padding: .5rem 1rem;
+            border: 1px solid $bgButtonApplyHover;
+            background-color: white;
+            color: $bgButtonApplyHover;
+            transition: .5s;
+            position: absolute;
+            top: 70%;
+            left: 85%;
+            border-radius: 5px;
+            cursor: pointer;
+            transform: translate(-50%,-50%);
+            &:hover{
+                background-color: $bgButtonApplyHover;
+            border: 1px solid $bgButtonApplyHover;
+
+            color: white;
             }
         }
         .job__content{
@@ -171,11 +191,17 @@
         }
     }
 }
-// @media (max-width:1125px){
-//     .jobTitle{
-//         width: 280px !important;
-//     }
-// }
+@media (max-width:1125px){
+    .ListJob{
+        .btn-delete-job{
+            padding: .5rem 1rem;
+            top: 70%;
+            background-color: $bgButtonSubmit;
+            left: 45%;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
 // @media (max-width:991px){
 //     .jobTitle{
 //         width: 500px !important;

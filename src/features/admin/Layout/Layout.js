@@ -18,6 +18,7 @@ import Contact from '../Contact/Contact';
 import AddContact from '../Contact/AddContact';
 import AddSocialNetwork from '../SocialNetwork/addSocialNetwork';
 import SocialNetwork from '../SocialNetwork/SocialNetwork';
+import User from "../User/User"
 export default function Nav() {
     const match = useRouteMatch();
     // console.log(match);
@@ -75,6 +76,9 @@ export default function Nav() {
                         <Menu.Item key="10" icon={state.collapsed === true ? <span className="fab fa-twitter" ></span> : <span className="fab fa-twitter mr-2"></span>}>
                             <Link to={`${match.url}/socialNetwork`}>Mạng xã hội</Link>
                         </Menu.Item>
+                        <Menu.Item key="11" icon={state.collapsed === true ? <span className="fas fa-user-injured" ></span> : <span className="fas fa-user-injured mr-2"></span>}>
+                            <Link to={`${match.url}/users`}>Cấp quyền</Link>
+                        </Menu.Item>
                     </Menu>
                 </Sider>
 
@@ -115,6 +119,9 @@ export default function Nav() {
                             </Route>
                             <Route exact path={`${match.path}/work`}  >
                                 <Jobs url={match.url} />
+                            </Route>
+                            <Route exact path={`${match.path}/users`}  >
+                                <User url={match.url} />
                             </Route>
                             <Route exact path={`${match.path}/typeWork`}  >
                                 <TypeWork url={match.url} />

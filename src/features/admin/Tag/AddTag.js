@@ -44,7 +44,7 @@ export default function AddTag() {
                 <form onSubmit={handleSubmit(onhandleSubmit)}>
                     <div className="form-group">
                         <label htmlFor="">Tên tag</label>
-                        <input {...register("name", { required: true })} className="form-control w-50" placeholder="" aria-describedby="helpId" />
+                        <input  {...register("name", { required: true })} className="form-control w-50" placeholder="" aria-describedby="helpId" />
                         {errors.name && <span className="text-danger">Bạn không được để trống!</span>}
                     </div>
                     <div className="text-center mtb">{id ? <input type="submit" value="Sửa" /> : <input type="submit" value="Thêm mới" />}</div>

@@ -3,10 +3,27 @@ import { useHistory } from 'react-router'
 import "../../../scss/CreateCV/ListCV.scss"
 import SpinLoad from "../../Spin/Spin"
 import { Link } from "react-router-dom"
+import { checkLoginUser } from '../../../container/Functionjs'
+import { message } from 'antd'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import checkLoginApi from '../../../../api/checkLogin'
 export default function ListCV({ data, loading }) {
-    const history = useHistory();
-    const detaiFormCV = (e) => {
-        history.push(`/detaiFormCV/${e}`)
+    const [user, setUser] = useState();
+    const history = useHistory()
+    useEffect(() => {
+        checkLoginApi.checkLogin().then(ok => {
+            if (ok.data.user.type === "user") {
+                setUser(ok.data.user.id)
+            }
+        })
+    })
+    const onClickInforCV = () => {
+        if (user) {
+            history.push("/inforCV");
+        } else {
+            message.warning("Bạn chưa đăng nhập tài khoản người dùng!")
+        }
     }
     return (
         <div className="listCv">
@@ -16,7 +33,10 @@ export default function ListCV({ data, loading }) {
                 </div>
                 <div className="heading__hr"></div>
             </div>
-            <div className="container">
+            <div className="div-btn-cv">
+                <Link className="btn-infor-cv" onClick={onClickInforCV}>Điền thông tin CV</Link>
+            </div>
+            <div className="container mb-5">
                 <div className="row">
                     <div className="col-md-3">
                         Tìm kiếm
@@ -46,11 +66,13 @@ export default function ListCV({ data, loading }) {
                                                     <div className="color"></div>
                                                     <div className="color"></div>
                                                 </div>
-                                            </div></Link>
+                                            </div>
+                                        </Link>
                                     </div>
                                 ))
                             }
                         </div>
+
                     </div>
                 </div>
             </div>

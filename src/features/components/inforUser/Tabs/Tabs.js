@@ -17,7 +17,7 @@ export default function Tab({ id }) {
                     <WorkSave id={id} />
                 </TabPane>
                 <TabPane tab="Công việc đã ứng tuyển" key="3">
-                    <UserApply />
+                    <UserApply id={id} />
                 </TabPane>
                 <TabPane tab="Thông tin cá nhân" key="4">
                     <Infor id={id} />

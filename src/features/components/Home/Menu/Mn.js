@@ -11,7 +11,7 @@ export default function Mn(props) {
             setUser(ok.data.user)
         })
     }, [])
-    // console.log(user);
+
     const inforCompany = (
         <Menu.Item key="1">
             <Link to="/inforCompany">Thông tin cá nhân</Link>
@@ -72,9 +72,12 @@ export default function Mn(props) {
                     <div className="item">
                         <Link to="/createCv">Tạo cv</Link>
                     </div>
-                    <div className="item">
-                        <Link to="/admin">admin</Link>
-                    </div>
+                    {user ?
+                        user.role === "admin" || user.role === "grant" ?
+                            <div className="item">
+                                <Link to="/admin">admin</Link>
+                            </div> : "" : ""
+                    }
                     <Dropdown overlay={ss} trigger={['click']}>
                         <span className="nav-link" >
                             <Avatar size="small" src={user ? user.avatar : imgDefault} />
