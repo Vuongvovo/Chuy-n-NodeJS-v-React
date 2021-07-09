@@ -27,6 +27,7 @@ import DetailFormCV from "./features/components/DetaiFormCV/DetaiFormCV";
 import InforCV from "./features/components/CreateCv/InforCV/InforCV";
 import checkLoginApi from "./api/checkLogin";
 import Empty from "./features/components/Empty/Empty";
+import Menu from "./features/components/Home/Menu/Menu";
 function App() {
   useEffect(() => {
     checkBar();
@@ -40,6 +41,11 @@ function App() {
   return (
     <div>
       <Router>
+        <Switch>
+          <Route path="/">
+            <Menu />
+          </Route>
+        </Switch>
         <Switch>
           <Route exact path="/">
             <Home />

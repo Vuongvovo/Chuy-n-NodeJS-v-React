@@ -1,21 +1,69 @@
-export const checkBar = () => {
-  const $ = document.querySelector.bind(document);
+export const funLine = () => {
+  var $ = document.querySelector.bind(document);
+
+  var tabActive = $(".item.active");
+  var line = $(".line_slide");
+
+  if (line && tabActive) {
+    line.style.left = tabActive.offsetLeft + "px";
+    line.style.width = tabActive.offsetWidth + "px";
+  }
+};
+export const lineSlide = () => {
+  var $ = document.querySelector.bind(document);
+  var $$ = document.querySelectorAll.bind(document);
+  var line = $(".line_slide");
+  if (line) {
+    var tabItem = $$(".item");
+    tabItem.forEach((tab, index) => {
+      tab.onclick = function () {
+        $(".item.active").classList.remove("active");
+        line.style.width = this.offsetWidth + "px";
+        line.style.left = this.offsetLeft + "px";
+        this.classList.add("active");
+      };
+    });
+  }
+};
+export const checkBar = (bar_ref, nav_ref, line_ref) => {
   var widthScreen = window.innerWidth;
-  const bar = $(".bar");
-  const nav = $("nav");
-  if (bar && nav) {
+  const bar = bar_ref;
+  const nav = nav_ref;
+  const line = line_ref;
+  if (bar && nav && line) {
     if (widthScreen <= 800) {
       nav.classList.add("menu--hident");
       bar.style.display = "flex";
+      line.style.display = "none";
     } else {
       nav.classList.remove("menu--hident");
       bar.style.display = "none";
+      line.style.display = "block";
     }
+  }
+};
+export const openMenu = (bar_ref) => {
+  const bar = bar_ref;
+  if (bar) {
+    const $ = document.querySelector.bind(document);
+    bar.onclick = () => {
+      if ($(".bar.menu__bar")) {
+        $(".bar.menu__bar").classList.remove("menu__bar");
+        $(".bar").classList.add("menu__barClose");
+        $(".menu--hident").style.right = "-16px";
+        $(".menu--hident").style.opacity = "1";
+      } else {
+        $(".bar.menu__barClose").classList.remove("menu__barClose");
+        $(".bar").classList.add("menu__bar");
+        $(".menu--hident").style.right = "100%";
+        $(".menu--hident").style.opacity = "0";
+      }
+    };
   }
 };
 export const checkDate = (e) => {
   if (e) {
-    var ngay = e.substr(8, 2);
+    // var ngay = e.substr(8, 2);
     var thang = e.substr(5, 2);
     var nam = e.substr(0, 4);
     return "Tháng " + thang + ", " + nam;
@@ -23,7 +71,7 @@ export const checkDate = (e) => {
 };
 export const checkDateCompany = (e) => {
   if (e) {
-    var ngay = e.substr(8, 2);
+    // var ngay = e.substr(8, 2);
     var thang = e.substr(5, 2);
     var nam = e.substr(0, 4);
     return "Tháng " + thang + "/" + nam;
@@ -45,7 +93,6 @@ export const checkDateDealtime = (e) => {
     } else {
       return "Đã hết hạn";
     }
-    console.log(today);
   }
 };
 export const checkArrayEquar = (a, b) => {
@@ -110,7 +157,7 @@ export const getQueryVariable = (variable) => {
   var vars = query.split("&");
   for (var i = 0; i < vars.length; i++) {
     var pair = vars[i].split("=");
-    if (pair[0] == variable) {
+    if (pair[0] === variable) {
       return pair[1].split("%20").join(" ");
     }
   }

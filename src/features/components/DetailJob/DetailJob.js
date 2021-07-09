@@ -22,7 +22,7 @@ export default function DetailJob() {
   }, []);
   return (
     <div>
-      <Menu />
+      {/* <Menu /> */}
       <Breadcrumb name={data ? data.name : ""} />
       <BannerJob
         name={data ? data.Company.name : ""}

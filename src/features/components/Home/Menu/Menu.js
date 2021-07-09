@@ -1,10 +1,13 @@
-import React from 'react'
-import Mn from "./Mn"
-import "./menujs"
+import React from "react";
+import { useRouteMatch } from "react-router-dom";
+import Mn from "./Mn";
+// import "./menujs"
 export default function ListMenu() {
-    return (
-        <div>
-            <Mn class="menu" />
-        </div>
-    )
+  const match = useRouteMatch();
+  let checkMenu = match.isExact;
+  return (
+    <div>
+      <Mn class={`menu ${checkMenu ? "" : "notMenu"}`} />
+    </div>
+  );
 }
