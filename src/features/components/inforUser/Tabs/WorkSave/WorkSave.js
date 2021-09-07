@@ -18,7 +18,7 @@ export default function WorkSave({ id }) {
     <div className="ListJob">
       <div className="heading">
         <div className="heading__title">
-          <h3>Công ty đã lưu</h3>
+          <h3>Công việc đã lưu</h3>
         </div>
         <div className="heading__hr"></div>
       </div>

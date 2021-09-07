@@ -18,6 +18,7 @@ export default function DetailCandidate() {
   };
   useEffect(() => {
     getApi();
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div>

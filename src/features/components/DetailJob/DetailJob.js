@@ -19,6 +19,7 @@ export default function DetailJob() {
     Promise.all([getApi()]).then(function (data) {
       setData(data[0]);
     });
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div>

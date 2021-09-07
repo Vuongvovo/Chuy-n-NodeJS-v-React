@@ -19,6 +19,7 @@ export default function DetailCompany() {
   };
   useEffect(() => {
     getApi();
+    window.scrollTo(0, 0);
   }, []);
   // console.log(data);
   return (

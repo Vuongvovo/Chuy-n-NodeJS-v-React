@@ -4,10 +4,11 @@
   border-radius: 100px;
   background-color: white;
 }
+@import "../Variable.scss";
 nav .line_slide {
-  height: 2px;
+  height: 4px;
   width: 0px;
-  border: 2px solid brown;
+  background-color: brown;
   border-radius: 10px;
   position: absolute;
   transition: 0.5s;
@@ -47,13 +48,13 @@ nav .line_slide {
       padding: 0.5rem 0.6rem;
       transition: 0.5s;
       &:hover {
-        color: yellow;
+        color: $bgButtonApply;
       }
     }
   }
   .active {
     a {
-      color: yellow;
+      color: $bgButtonApply;
     }
   }
   .bar {

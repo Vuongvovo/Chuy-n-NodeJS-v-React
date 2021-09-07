@@ -15,6 +15,7 @@ export default function CreateCv() {
   const loading = useSelector((state) => state.formCVs.loading);
   useState(() => {
     actionResult();
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div>

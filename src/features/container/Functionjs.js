@@ -51,12 +51,12 @@ export const openMenu = (bar_ref) => {
         $(".bar.menu__bar").classList.remove("menu__bar");
         $(".bar").classList.add("menu__barClose");
         $(".menu--hident").style.right = "-16px";
-        $(".menu--hident").style.opacity = "1";
+        // $(".menu--hident").style.opacity = "1";
       } else {
         $(".bar.menu__barClose").classList.remove("menu__barClose");
         $(".bar").classList.add("menu__bar");
         $(".menu--hident").style.right = "100%";
-        $(".menu--hident").style.opacity = "0";
+        // $(".menu--hident").style.opacity = "0";
       }
     };
   }
@@ -122,6 +122,7 @@ export const checkStatus = (e) => {
 };
 export const GetCategoryHome = (e) => {
   let list = e.rows;
+
   if (list) {
     let data = [];
     let result = [];

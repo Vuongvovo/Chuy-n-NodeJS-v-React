@@ -39,6 +39,7 @@ export default function Jobs() {
           data: ok.data,
         });
       });
+    window.scrollTo(0, 0);
   }, [name, address, time]);
   return (
     <div>

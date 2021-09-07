@@ -28,29 +28,36 @@ import InforCV from "./features/components/CreateCv/InforCV/InforCV";
 import checkLoginApi from "./api/checkLogin";
 import Empty from "./features/components/Empty/Empty";
 import Menu from "./features/components/Home/Menu/Menu";
+import CheckMenu from "./features/components/CheckMenu/CheckMenu";
 function App() {
   useEffect(() => {
     checkBar();
   });
+
   const [user, setUser] = useState();
   useEffect(() => {
     checkLoginApi.checkLogin().then((ok) => {
       setUser(ok.data.user.role);
     });
   }, []);
+
   return (
     <div>
       <Router>
         <Switch>
-          <Route path="/">
-            <Menu />
+          <Route path={["/admin", "/register", "/Login", "/"]}>
+            <CheckMenu />
           </Route>
         </Switch>
+
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          {user === "admin" || user === "grant" ? (
+          <Route path="/admin">
+            <Ladmin />
+          </Route>
+          {/* {user === "admin" || user === "grant" ? (
             <Route path="/admin">
               <Ladmin />
             </Route>
@@ -58,7 +65,7 @@ function App() {
             <Route path="/admin">
               <Empty />
             </Route>
-          )}
+          )} */}
           <Route exact path="/jobs">
             <Jobs />
           </Route>
@@ -95,9 +102,9 @@ function App() {
           <Route exact path="/inforUser">
             <InforUser />
           </Route>
-          <Route exact path="/createCv">
+          {/* <Route exact path="/createCv">
             <CreateCv />
-          </Route>
+          </Route> */}
           <Route exact path="/detaiFormCV/:id">
             <DetailFormCV />
           </Route>

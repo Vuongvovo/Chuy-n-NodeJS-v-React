@@ -1,5 +1,21 @@
 @import "../Home/ListJobs.scss";
 @import "../Variable.scss";
+.candidateTag {
+  a {
+    border: 1px solid $bgButtonApply;
+    border-radius: 5px;
+    padding: 0.1rem 0.7rem;
+    color: $bgButtonApplyHover;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    margin-right: 1rem;
+    &:hover {
+      background: linear-gradient(90deg, #fc7979 50%, $bgButtonApply 100%);
+      color: white;
+    }
+  }
+}
 .candidateContent {
   .candidate__box {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

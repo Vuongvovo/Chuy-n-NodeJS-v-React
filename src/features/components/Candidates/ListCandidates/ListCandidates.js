@@ -19,6 +19,7 @@ export default function ListCandidates() {
   useEffect(() => {
     localStorage.setItem("pageUserHome", page);
     actionResult({ page: page, status: 1 });
+    window.scrollTo(0, 0);
   }, [page]);
   return (
     <div className="listCandidates">
@@ -34,7 +35,7 @@ export default function ListCandidates() {
             <SpinLoad />
           ) : (
             users.rows.map((data) => (
-              <div className="col-md-3">
+              <div className="col-md-3 ">
                 <div className="candidate__box">
                   <div className="candidate__box__img">
                     <img src={data.avatar} alt="" />

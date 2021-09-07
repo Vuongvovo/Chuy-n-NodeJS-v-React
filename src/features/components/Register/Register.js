@@ -1,15 +1,27 @@
 import React, { useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/Register/Register.scss";
 import RegisterCompany from "./RegisterCompany";
 import RegisterUser from "./RegisterUser";
 export default function Register() {
+  const UserEl = useRef(null);
+  const CompanyEl = useRef(null);
+
   const [check, setCheck] = useState(1);
-  const onChange = (e) => {
-    if (e === 1) {
+  const onClickBtn = (e) => {
+    var $ = document.querySelector.bind(document);
+    const name = e.current.id;
+    const user = $("#user");
+    const company = $("#company");
+    if (name === "user") {
+      user.classList.add("active");
+      company.classList.remove("active");
       setCheck(1);
     } else {
-      setCheck(2);
+      company.classList.add("active");
+      user.classList.remove("active");
+      setCheck(0);
     }
   };
   return (
@@ -20,19 +32,18 @@ export default function Register() {
         <div className="register__box__left">
           <div className="register__box__left--account">
             <button
-              className="account"
-              autoFocus
-              onClick={() => {
-                onChange(1);
-              }}
+              className="account active"
+              onClick={() => onClickBtn(UserEl)}
+              ref={UserEl}
+              id="user"
             >
               Tài khoản người dùng
             </button>
             <button
               className="account"
-              onClick={() => {
-                onChange(2);
-              }}
+              onClick={() => onClickBtn(CompanyEl)}
+              ref={CompanyEl}
+              id="company"
             >
               Tài khoản công ty
             </button>

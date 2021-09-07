@@ -19,6 +19,7 @@ export default function Companys() {
   useEffect(() => {
     localStorage.setItem("pagecompanyHome", page);
     actionResult({ page: page, status: 1 });
+    window.scrollTo(0, 0);
   }, [page]);
 
   return (

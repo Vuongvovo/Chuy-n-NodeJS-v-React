@@ -1,7 +1,6 @@
 import { Avatar, Dropdown, Menu } from "antd";
-import React, { useEffect, useState } from "react";
-import { useRef } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import checkLoginApi from "../../../../api/checkLogin";
 import {
   checkBar,
@@ -9,6 +8,7 @@ import {
   lineSlide,
   openMenu,
 } from "../../../container/Functionjs";
+import logo from "../../../images/logossss.png";
 import "../../../scss/Home/Menu.scss";
 export default function Mn(props) {
   const okok = (bar_ref, nav_ref, line_ref) => {
@@ -23,16 +23,26 @@ export default function Mn(props) {
       });
     }, 500);
   };
-
+  let { pathname } = useLocation();
   const bar_el = useRef(null);
   const nav_el = useRef(null);
   const line_el = useRef(null);
   const [user, setUser] = useState();
   okok(bar_el, nav_el, line_el);
+  console.log(nav_el.current);
   useEffect(() => {
     checkLoginApi.checkLogin().then((ok) => {
       setUser(ok.data.user);
     });
+    let idClass = pathname.slice(1);
+    console.log(idClass);
+    let ListMenu = nav_el.current.querySelectorAll(".item");
+    nav_el.current.querySelector(".item.active").classList.remove("active");
+    for (let i = 0; i < ListMenu.length; i++) {
+      if (ListMenu[i].id == idClass) {
+        ListMenu[i].classList.add("active");
+      }
+    }
   }, []);
 
   const inforCompany = (
@@ -70,7 +80,9 @@ export default function Mn(props) {
   return (
     <div className={props.class}>
       <div className="menu__brand">
-        <Link to="/">JobIt</Link>
+        <Link to="/">
+          <img src={logo} height={40} alt="" />
+        </Link>
       </div>
       <div className="menu--right">
         <div className="bar menu__bar" ref={bar_el}>
@@ -79,21 +91,21 @@ export default function Mn(props) {
           <div className="line--bot"></div>
         </div>
         <nav ref={nav_el}>
-          <div className="item active">
-            <Link to="">Trang chủ</Link>
+          <div className="item active" id="">
+            <Link to="/">Trang chủ</Link>
           </div>
-          <div className="item">
+          <div className="item" id="candidates">
             <Link to="/candidates">Ứng viên</Link>
           </div>
-          <div className="item">
+          <div className="item" id="jobs">
             <Link to="/jobs">Việc làm</Link>
           </div>
-          <div className="item">
+          <div className="item" id="companys">
             <Link to="/companys">Nhà tuyển dụng</Link>
           </div>
-          <div className="item">
+          {/* <div className="item">
             <Link to="/createCv">Tạo cv</Link>
-          </div>
+          </div> */}
           <div className="line_slide" ref={line_el}></div>
           {user ? (
             user.role === "admin" || user.role === "grant" ? (

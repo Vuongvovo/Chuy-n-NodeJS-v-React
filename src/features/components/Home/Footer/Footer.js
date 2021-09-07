@@ -26,7 +26,6 @@ export default function Footer() {
   const chuyentrang = (url) => {
     window.open(url);
   };
-  console.log("ok");
   return (
     <div className="footer">
       <div className="container-footer">

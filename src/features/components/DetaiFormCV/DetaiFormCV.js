@@ -16,6 +16,7 @@ export default function DetaiFormCV() {
   console.log(data);
   useEffect(() => {
     getApi();
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div>

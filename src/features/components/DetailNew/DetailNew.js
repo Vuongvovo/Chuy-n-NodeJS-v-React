@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import newApi from "../../../api/newApi";
 import Footer from "../Home/Footer/Footer";
-import Menu from "../MenuNotHome/MenuNotHome";
 import BannerNew from "./BannerNew/BannerNew";
 import Breadcrumb from "./Breadcrumb/Breadcrumb";
 import New from "./New/New";
@@ -18,6 +17,7 @@ export default function DetailNew() {
         })
       );
     }
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div>

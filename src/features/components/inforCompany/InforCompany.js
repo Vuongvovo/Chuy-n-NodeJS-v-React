@@ -11,6 +11,7 @@ export default function InforCompany() {
     checkLoginApi.checkLogin().then((ok) => {
       setUser(ok.data.user);
     });
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div>
