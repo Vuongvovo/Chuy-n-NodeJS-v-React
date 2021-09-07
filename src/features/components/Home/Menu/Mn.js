@@ -29,13 +29,11 @@ export default function Mn(props) {
   const line_el = useRef(null);
   const [user, setUser] = useState();
   okok(bar_el, nav_el, line_el);
-  console.log(nav_el.current);
   useEffect(() => {
     checkLoginApi.checkLogin().then((ok) => {
       setUser(ok.data.user);
     });
     let idClass = pathname.slice(1);
-    console.log(idClass);
     let ListMenu = nav_el.current.querySelectorAll(".item");
     nav_el.current.querySelector(".item.active").classList.remove("active");
     for (let i = 0; i < ListMenu.length; i++) {

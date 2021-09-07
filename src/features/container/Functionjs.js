@@ -122,8 +122,7 @@ export const checkStatus = (e) => {
 };
 export const GetCategoryHome = (e) => {
   let list = e.rows;
-
-  if (list) {
+  if (list.length !== 0) {
     let data = [];
     let result = [];
     for (let i = 0; i < list.length; i++) {

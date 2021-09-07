@@ -34,12 +34,27 @@ function App() {
     checkBar();
   });
 
-  const [user, setUser] = useState();
+  const [checkAdmin, setCheckAdmin] = useState();
   useEffect(() => {
     checkLoginApi.checkLogin().then((ok) => {
-      setUser(ok.data.user.role);
+      // setUser(ok.data.user.role);
+      let user = ok.data.user.role;
+      console.log(user);
+      if (user === "admin" || user === "grant") {
+        setCheckAdmin(
+          <Route path="/admin">
+            <Ladmin />
+          </Route>
+        );
+      } else {
+        setCheckAdmin(
+          <Route path="/admin">
+            <Empty />
+          </Route>
+        );
+      }
     });
-  }, []);
+  });
 
   return (
     <div>
@@ -54,18 +69,10 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/admin">
+          {/* <Route path="/admin">
             <Ladmin />
-          </Route>
-          {/* {user === "admin" || user === "grant" ? (
-            <Route path="/admin">
-              <Ladmin />
-            </Route>
-          ) : (
-            <Route path="/admin">
-              <Empty />
-            </Route>
-          )} */}
+          </Route> */}
+          {checkAdmin}
           <Route exact path="/jobs">
             <Jobs />
           </Route>
