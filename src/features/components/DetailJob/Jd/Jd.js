@@ -262,9 +262,7 @@ export default function Jd(props) {
                 {notSave ? "Lưu công việc" : "Huỷ lưu công việc"}
               </div>
             </div>
-            <div className="advertisement">
-              <img src={qc} alt="" />
-            </div>
+
             <div className="box__keyTag">
               <KeyTag />
             </div>

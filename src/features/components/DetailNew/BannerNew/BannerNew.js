@@ -22,7 +22,7 @@ export default function BannerNew(props) {
                 </div>
                 <div className="bannerNew__content__date">
                     <Avatar size="large" src={anh} className="avatarNew" />
-                    <span >Quỳnh Chi lúc 26 Tháng Hai, 2021</span>
+                    <span >Ngọc Vương, lúc 6 Tháng Mười Hai, 2024</span>
                 </div>
             </div>
         </div>

@@ -51,19 +51,19 @@ export const openMenu = (bar_ref) => {
         $(".bar.menu__bar").classList.remove("menu__bar");
         $(".bar").classList.add("menu__barClose");
         $(".menu--hident").style.right = "-16px";
-        // $(".menu--hident").style.opacity = "1";
+
       } else {
         $(".bar.menu__barClose").classList.remove("menu__barClose");
         $(".bar").classList.add("menu__bar");
         $(".menu--hident").style.right = "100%";
-        // $(".menu--hident").style.opacity = "0";
+
       }
     };
   }
 };
 export const checkDate = (e) => {
   if (e) {
-    // var ngay = e.substr(8, 2);
+
     var thang = e.substr(5, 2);
     var nam = e.substr(0, 4);
     return "Tháng " + thang + ", " + nam;
@@ -71,7 +71,7 @@ export const checkDate = (e) => {
 };
 export const checkDateCompany = (e) => {
   if (e) {
-    // var ngay = e.substr(8, 2);
+
     var thang = e.substr(5, 2);
     var nam = e.substr(0, 4);
     return "Tháng " + thang + "/" + nam;
@@ -178,16 +178,10 @@ export const removeVietnameseTones = (str) => {
   str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
   str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
   str = str.replace(/Đ/g, "D");
-  // Some system encode vietnamese combining accent as individual utf-8 characters
-  // Một vài bộ encode coi các dấu mũ, dấu chữ như một kí tự riêng biệt nên thêm hai dòng này
-  str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // ̀ ́ ̃ ̉ ̣  huyền, sắc, ngã, hỏi, nặng
-  str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // ˆ ̆ ̛  Â, Ê, Ă, Ơ, Ư
-  // Remove extra spaces
-  // Bỏ các khoảng trắng liền nhau
+  str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, "");
+  str = str.replace(/\u02C6|\u0306|\u031B/g, "");
   str = str.replace(/ + /g, " ");
   str = str.trim();
-  // Remove punctuations
-  // Bỏ dấu câu, kí tự đặc biệt
   str = str.replace(
     /!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g,
     " "
